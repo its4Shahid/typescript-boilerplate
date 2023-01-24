@@ -4,11 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-require("reflect-metadata");
 const app = (0, express_1.default)();
-app.use(express_1.default.json());
-app.use(express_1.default.urlencoded({ extended: true }));
-app.listen(3005, () => {
-    console.log(`Server started at port 3005`);
+const port = 3003;
+app.get('/', (req, res) => {
+    res.send('Hello World!');
 });
-//# sourceMappingURL=index.js.map
+app.listen(port, () => {
+    return console.log(`Express is listening at http://localhost:${port}`);
+});
+//# sourceMappingURL=app.js.map
